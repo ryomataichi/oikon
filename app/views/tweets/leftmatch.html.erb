@@ -1,0 +1,43 @@
+<div class="tyousei">  
+<div class="hidari">  
+🔥miner
+</div>
+<div class="migi">  
+🛎️ハンバーガーメニュー後でコピペ
+</div>
+</div>
+<div class="page slide-in-left">  
+  <main class="content">
+    <% if @tweet.image.attached? %>
+        <%= image_tag @tweet.image,style: "border-radius: 0%; width: 360px; height: 240px; object-fit:cover;" %>
+    <% end %>
+    <br>
+    <%= @tweet.name %>
+    <br>
+    <%= @tweet.year %>
+    <br>
+    <%= @tweet.profile %>
+    <br>
+    <%= @tweet.place %>
+    <br>
+    <%= @tweet.job %>
+    <br>
+    <%= @tweet.hobby %>
+    <br>
+    <button class="btn heni"><%= link_to "❌", tweets_leftmatch_path(bangou: @url) , class: 'matiapu' %></button>
+    <div class="kuuhaku"> </div>  
+    <button class="btn heni"><%= link_to "❤️", tweets_match_path(bangou: @url) , class: 'matiapu' %></button>
+
+  </main>
+</div>
+  <footer class="bottom-cta">
+    <div class="cta-inner">
+      <button class="btn primary">🔥</button>
+      <button class="btn secondary">🔍</button>
+      <button class="btn secondary"><%= link_to "✨", tweets_path %></button>
+      <button class="btn secondary"><%= link_to "マッチングページへ", tweets_match_path(bangou: @url) %></button>
+      <button class="btn secondary">💬</button>
+      <button class="btn secondary">👤</button>
+
+    </div>
+  </footer>    

@@ -1,0 +1,49 @@
+<div class="tyousei">  
+<div class="hidari">  
+🔥miner
+</div>
+<div class="migi">  
+🛎️
+  <div class="nav">
+  <input id="drawer_input" class="drawer_hidden" type="checkbox">
+  <label for="drawer_input" class="drawer_open"><span></span></label>
+        <nav class="nav_content">
+          <ul class="nav_list">
+            <li class="nav_item"><a href="">      <%= image_tag 'mitani.jpeg', width: "1000%", height: "1000%", class: "uwagaki" %></a></li>
+          </ul>
+        </nav>
+   </div>
+  </div>
+</div>
+</div>
+<div class="page slide-in-right">  
+  <main class="content">
+    <% if @tweet.image.attached? %>
+        <%= image_tag @tweet.image,style: "border-radius: 0%; width: 100%; height: 100%; object-fit:cover;", class: 'sitagaki' %>
+    <% end %>
+    <br>
+    <%= link_to @tweet.name, tweet_path(@tweet.id), class: "tweet-title" if @tweet.name? %>
+    <%= @tweet.year if @tweet.year? %>
+<div class="kaigyou">  
+<%= @tweet.profile if @tweet.profile? %>
+</div>
+    <%= @tweet.place if @tweet.place? %>
+    <%= @tweet.job if @tweet.job? %>
+    <%= @tweet.hobby if @tweet.hobby? %>
+    <br>
+    <button class="btn left"><%= link_to "❌", tweets_leftmatch_path(bangou: @url) , class: 'matiapu' %></button>
+    <button class="btn right"><%= link_to "❤️", tweets_match_path(bangou: @url) , class: 'matiapu' %></button>
+
+  </main>
+</div>
+  <footer class="bottom-cta">
+    <div class="cta-inner">
+      <button class="btn primary">🔥</button>
+      <button class="btn secondary">🔍</button>
+      <button class="btn secondary"><%= link_to "✨", tweets_path %></button>
+      <button class="btn secondary"><%= link_to "マッチングページへ", tweets_match_path(bangou: @url) %></button>
+      <button class="btn secondary">💬</button>
+      <button class="btn secondary">👤</button>
+
+    </div>
+  </footer>    

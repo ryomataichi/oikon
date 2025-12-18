@@ -1,0 +1,18 @@
+<%= form_for @tweet do |f| %>
+    <%= f.label :画像 %>
+    <%= f.file_field :image, :size => 100 %> <br>
+    <%= f.label :name %>
+    <%= f.text_field :name, :size => 140 %><br>
+    <%= f.label :year %>
+    <%= f.text_field :year %><br>
+    <%= f.label :profile %>
+    <%= f.text_area :profile %><br>
+    <%= f.label :place %>
+    <%= f.text_field :place %><br>
+    <%= f.label :job %>
+    <%= f.text_field :job %><br>
+    <%= f.label :hobby %>
+    <%= f.text_field :hobby %><br>
+    <%= f.submit "編集する" %>
+<% end %>
+<%= link_to "Tweet一覧に戻る", tweets_path %>

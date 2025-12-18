@@ -1,0 +1,23 @@
+<% @tweets.each do |t| %>
+    <p>
+    <% if t.image.attached? %>
+        <%= image_tag t.image,style: "border-radius: 0%; width: 360px; height: 240px; object-fit:cover;" %>
+    <% else %>
+        ない
+    <% end %>
+<br>
+    <%= link_to t.name, tweet_path(t.id), class: "tweet-title" if t.name? %>
+<br>
+<%= t.year %>
+<br>
+<%= t.profile %>
+<br>
+<%= t.place %>
+<br>
+<%= t.job %>
+<br>
+<%= t.hobby %>
+<br>
+    </p>
+<% end %>
+  <%=link_to "新規投稿",new_tweet_path, class: 'geek' %>

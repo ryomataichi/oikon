@@ -1,0 +1,20 @@
+    <% if @tweet.image.attached? %>
+        <%= image_tag @tweet.image,style: "border-radius: 0%; width: 360px; height: 240px; object-fit:cover;" %>
+    <% else %>
+        ない
+    <% end %><br>
+<%= @tweet.name %>
+<br>
+<%= @tweet.year %>
+<br>
+<%= @tweet.profile %>
+<br>
+<%= @tweet.place %>
+<br>
+<%= @tweet.job %>
+<br>
+<%= @tweet.hobby %>
+<br>
+<%= link_to "編集する", edit_tweet_path(@tweet.id) %>
+    <%= link_to "マッチングページへ", tweets_match_path(bangou: @url) %>
+
