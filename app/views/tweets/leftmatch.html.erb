@@ -3,36 +3,42 @@
 🔥miner
 </div>
 <div class="migi">  
-🛎️ハンバーガーメニュー後でコピペ
+🛎️
+  <div class="nav">
+  <input id="drawer_input" class="drawer_hidden" type="checkbox">
+  <label for="drawer_input" class="drawer_open"><span></span></label>
+        <nav class="nav_content">
+          <ul class="nav_list">
+            <li class="nav_item"><a href="">      画像入れるとこ</a></li>
+          </ul>
+        </nav>
+   </div>
+  </div>
 </div>
 </div>
 <div class="page slide-in-left">  
   <main class="content">
     <% if @tweet.image.attached? %>
-        <%= image_tag @tweet.image,style: "border-radius: 0%; width: 360px; height: 240px; object-fit:cover;" %>
+        <%= image_tag @tweet.image,style: "border-radius: 0%; width: 100%; height: 100%; object-fit:cover;", class: "dog-image" %>
     <% end %>
     <br>
-    <%= @tweet.name %>
+    <%= link_to @tweet.name, tweet_path(@tweet.id), class: "tweet-title" if @tweet.name? %>
+    <%= @tweet.year if @tweet.year? %>
+<div class="kaigyou">  
+<%= @tweet.profile if @tweet.profile? %>
+</div>
+    <%= @tweet.place if @tweet.place? %>
+    <%= @tweet.job if @tweet.job? %>
+    <%= @tweet.hobby if @tweet.hobby? %>
     <br>
-    <%= @tweet.year %>
-    <br>
-    <%= @tweet.profile %>
-    <br>
-    <%= @tweet.place %>
-    <br>
-    <%= @tweet.job %>
-    <br>
-    <%= @tweet.hobby %>
-    <br>
-    <button class="btn heni"><%= link_to "❌", tweets_leftmatch_path(bangou: @url) , class: 'matiapu' %></button>
-    <div class="kuuhaku"> </div>  
-    <button class="btn heni"><%= link_to "❤️", tweets_match_path(bangou: @url) , class: 'matiapu' %></button>
+    <button class="btn left"><%= link_to "❌", tweets_leftmatch_path(bangou: @url) , class: 'matiapu' %></button>
+    <button class="btn right"><%= link_to "❤️", tweets_match_path(bangou: @url) , class: 'matiapu' %></button>
 
   </main>
 </div>
   <footer class="bottom-cta">
     <div class="cta-inner">
-      <button class="btn primary">🔥</button>
+      <button class="btn primary"><%= link_to "🔥", oikons_top_path %></button>
       <button class="btn secondary">🔍</button>
       <button class="btn secondary"><%= link_to "✨", tweets_path %></button>
       <button class="btn secondary"><%= link_to "マッチングページへ", tweets_match_path(bangou: @url) %></button>

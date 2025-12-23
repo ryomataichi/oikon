@@ -16,5 +16,6 @@
 <%= @tweet.hobby %>
 <br>
 <%= link_to "編集する", edit_tweet_path(@tweet.id) %>
+<%= link_to "Tweet一覧に戻る", tweets_path %>
 <%= link_to "マッチングページへ", tweets_match_path(bangou: @url) %>
 
