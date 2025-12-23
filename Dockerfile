@@ -21,12 +21,10 @@ FROM base as build
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y \
       build-essential \
-      curl \
-      libjemalloc2 \
-      libvips \
-      sqlite3 \
-      libpq5 \
-    && rm -rf /var/lib/apt/lists /var/cache/apt/archives
+      pkg-config \
+      libyaml-dev \
+      curl libjemalloc2 libvips sqlite3 libpq5 \
+    && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
