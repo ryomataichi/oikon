@@ -19,7 +19,7 @@
 <div class="page slide-in-left">  
   <main class="content">
     <% if @tweet.image.attached? %>
-        <%= image_tag @tweet.image,style: "border-radius: 3%; width: 100%; height: 100%; object-fit:cover;", class: "dog-image" %>
+        <%= image_tag @tweet.image,style: "border-radius: 3%; width: 100%; height: 100%; object-fit:cover;", class: "cat-image" %>
     <% end %>
     <br>
     <%= link_to @tweet.name, tweet_path(@tweet.id), class: "tweet-title" if @tweet.name? %>

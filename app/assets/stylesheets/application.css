@@ -26,7 +26,11 @@
 
 .dog-image {
   max-width: 100%;
-  height: 200px;
+  object-fit: cover;
+}
+
+.cat-image {
+  max-width: 100%;
   object-fit: cover;
 }
 
@@ -58,11 +62,6 @@
   to   { opacity: 1; transform: translateX(0); }
 }
 
-.content {
-    padding-bottom: 110px; /* CTA分の余白（重要） */
-    padding-top: 10%;
-
-}
 .bottom-cta {
   position: sticky;
   bottom: 0;
@@ -249,4 +248,16 @@
 }
 .kaigyou{
     white-space: pre-wrap;
+}
+.content {
+    padding-bottom: 110px; /* CTA分の余白（重要） */
+    padding-top: 10%;
+}
+.image-wrapper .image-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 12px;
+  color: #fff;
+  background: rgba(0,0,0,0.5);
 }
