@@ -7,12 +7,12 @@
 <i class="fa-solid fa-grip-lines"></i>
 </div>
 </div>
-<div class="page slide-in-right">  
+<div class="page slide-in-left">  
   <main class="content">
     <% if @tweet.image.attached? %>
         <%= image_tag @tweet.image, class: "cat-image" %>
     <% end %>
-    <%= link_to @tweet.name, tweet_path(@tweet.id), class: "tweet-title" if @tweet.name? %>
+    <%=  @tweet.name if @tweet.name? %>
     <%= @tweet.year if @tweet.year? %>
     <button class="btn ninsyou">
       <i class="fa-solid fa-check" style="color: #ffffff;"></i>
@@ -25,31 +25,22 @@
   <%= @tweet.job if @tweet.job? %>
   <%= @tweet.hobby if @tweet.hobby? %>
 <br>
- 
-  <button class="btn most-left">
-  <%= link_to tweets_match_path(bangou: @url) , class: 'matiapu', method: :post do %>
-    <i class="fa-solid fa-arrow-rotate-right fa-flip-horizontal" style="color: #FFD43B;"></i>
-  <% end %></button>  
-
+    
   <button class="btn left">
-    <%= link_to tweets_match_path(bangou: @url) , class: 'matiapu', method: :post do %>
+    <%= link_to tweets_leftmatch_path(bangou: @url) , class: 'matiapu', method: :post do %>
       <i class="fa-solid fa-xmark" style="color: #e151bb;"></i>
     <% end %></button>
 
     <button class="btn center">
     <%= link_to tweets_match_path(bangou: @url) , class: 'matiapu', method: :post do %>
-      <i class="fa-solid fa-star" style="color: #454545;"></i>
+      <i class="fa-solid fa-heart" style="color: #00ff6e;"></i>
     <% end %></button>
 
     <button class="btn right">
-    <%= link_to tweets_match_path(bangou: @url) , class: 'matiapu', method: :post do %>
-      <i class="fa-solid fa-heart" style="color: #00ff6e;"></i>
+    <%= link_to tweets_path, class: 'matiapu', method: :post do %>
+      <i class="fa-solid fa-star" style="color: #454545;"></i>
     <% end %></button>
-    <button class="btn most-right">
-    <%= link_to tweets_match_path(bangou: @url) , class: 'matiapu', method: :post do %>
-      <i class="fa-solid fa-bolt" style="color: #9475f0;"></i>
-    <% end %></button>
-    
+
   </main>
 </div>
   <footer class="bottom-cta">

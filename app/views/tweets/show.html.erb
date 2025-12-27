@@ -1,21 +1,64 @@
+<div class="tyousei">  
+<div class="hidari">  
+<i class="fa-solid fa-fire fa-flip-horizontal" style="color: #ff0000;"></i>miner
+</div>
+<div class="migi">  
+<i class="fa-solid fa-bell"></i>
+<i class="fa-solid fa-grip-lines"></i>
+</div>
+</div>
+<div class="page slide-in-right">  
+  <main class="content">
     <% if @tweet.image.attached? %>
-        <%= image_tag @tweet.image,style: "border-radius: 0%; width: 360px; height: 240px; object-fit:cover;" %>
-    <% else %>
-        ない
-    <% end %><br>
-<%= @tweet.name %>
+        <%= image_tag @tweet.image, class: "cat-image" %>
+    <% end %>
+    <%=  @tweet.name if @tweet.name? %>
+    <%= @tweet.year if @tweet.year? %>
+    <button class="btn ninsyou">
+      <i class="fa-solid fa-check" style="color: #ffffff;"></i>
+    </button>
 <br>
-<%= @tweet.year %>
+  <i class="fa-solid fa-quote-left"></i>
+  <%= @tweet.profile if @tweet.profile? %>
+  <br>
+  <%= @tweet.place if @tweet.place? %>
+  <%= @tweet.job if @tweet.job? %>
+  <%= @tweet.hobby if @tweet.hobby? %>
 <br>
-<%= @tweet.profile %>
-<br>
-<%= @tweet.place %>
-<br>
-<%= @tweet.job %>
-<br>
-<%= @tweet.hobby %>
-<br>
-<%= link_to "編集する", edit_tweet_path(@tweet.id) %>
-<%= link_to "Tweet一覧に戻る", tweets_path %>
-<%= link_to "マッチングページへ", tweets_match_path(bangou: @url) %>
+    
+  <button class="btn left">
+    <%= link_to tweets_leftmatch_path(bangou: @url) , class: 'matiapu', method: :post do %>
+      <i class="fa-solid fa-xmark" style="color: #e151bb;"></i>
+    <% end %></button>
 
+    <button class="btn center">
+    <%= link_to tweets_match_path(bangou: @url) , class: 'matiapu', method: :post do %>
+      <i class="fa-solid fa-heart" style="color: #00ff6e;"></i>
+    <% end %></button>
+
+    <button class="btn right">
+    <%= link_to tweets_path, class: 'matiapu', method: :post do %>
+      <i class="fa-solid fa-star" style="color: #454545;"></i>
+    <% end %></button>
+
+  </main>
+</div>
+  <footer class="bottom-cta">
+    <div class="cta-inner">
+      <button class="btn secondary">
+      <%= link_to oikons_top_path, method: :post do %>
+        <i class="fa-solid fa-fire fa-flip-horizontal" style="color: #ff0000;"></i>
+      <% end %></button>
+      <button class="btn secondary">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+      <button class="btn secondary"><%= link_to "✨", tweets_match_path(bangou: @url) %></button>
+      <button class="btn secondary">
+      <i class="fa-solid fa-comments"></i>
+      </button>
+      <button class="btn secondary"
+      ><i class="fa-solid fa-user"></i>
+      </button>
+
+    </div>
+  </footer>    
