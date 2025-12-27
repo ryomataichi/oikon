@@ -30,23 +30,27 @@
 }
 
 .cat-image {
-  max-width: 100%;
+   width: 100%;
+  height: 700px;      /* 高さ固定をやめる */
+  display: block;    /* imgの下の謎の隙間も消える */
   object-fit: cover;
 }
 
 .slide-in-right {
-  max-width: 390px;
+  max-width: none;  
   margin: 0 auto;
   min-height: 100svh;
+  width: 100%;
   animation: slideInRight .33s ease-out both;
     display: flex;
   flex-direction: column;
 }
 
 .slide-in-left {
-  max-width: 390px;
+ max-width: none;  
   margin: 0 auto;
   min-height: 100svh;
+  width: 100%;
   animation: slideInLeft .33s ease-out both;
   display: flex;
   flex-direction: column;
@@ -101,7 +105,7 @@
 }
 
 .btn.ninsyou {
-    height: auto;
+    height: 25px;
     border-radius: 50%;
   background: #006eff;
   color: #fff;
@@ -119,6 +123,15 @@
 }
 
 .btn.right {
+    height: auto;
+    border-radius: 50%;
+  background: #ffffff;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    right: 0;
+}
+
+.btn.center {
     height: auto;
     border-radius: 50%;
   background: #ffffff;
@@ -275,6 +288,6 @@
 }
 
 .content {
-    padding-bottom: 110px; /* CTA分の余白（重要） */
-    padding-top: 10%;
+    padding-bottom: 110px;
+  padding-top: 8px;
 }
