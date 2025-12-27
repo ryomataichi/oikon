@@ -31,7 +31,7 @@
 
 .cat-image {
    width: 100%;
-  height: 700px;      /* 高さ固定をやめる */
+  height: 100%;      /* 高さ固定をやめる */
   display: block;    /* imgの下の謎の隙間も消える */
   object-fit: cover;
 }
