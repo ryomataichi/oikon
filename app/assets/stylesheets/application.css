@@ -100,7 +100,34 @@
   color: #333;
 }
 
+.btn.ninsyou {
+    height: auto;
+    border-radius: 50%;
+  background: #006eff;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    right: 0;
+}
+
+.btn.most-right {
+    height: auto;
+    border-radius: 50%;
+  background: #ffffff;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    right: 0;
+}
+
 .btn.right {
+    height: auto;
+    border-radius: 50%;
+  background: #ffffff;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    right: 0;
+}
+
+.btn.most-left {
     height: auto;
     border-radius: 50%;
   background: #ffffff;
@@ -246,18 +273,8 @@
   transition: .2s;
   text-align: center;
 }
-.kaigyou{
-    white-space: pre-wrap;
-}
+
 .content {
     padding-bottom: 110px; /* CTA分の余白（重要） */
     padding-top: 10%;
-}
-.image-wrapper .image-text {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 12px;
-  color: #fff;
-  background: rgba(0,0,0,0.5);
 }
