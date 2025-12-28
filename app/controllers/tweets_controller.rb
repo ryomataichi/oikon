@@ -12,6 +12,12 @@ class TweetsController < ApplicationController
         @url = list.shuffle!.first
     end
 
+    def leftshow
+        @tweet = Tweet.find(params[:id])
+        list = Tweet.active.pluck(:id)
+        @url = list.shuffle!.first
+    end
+
     def new
     @tweet = Tweet.new
     end

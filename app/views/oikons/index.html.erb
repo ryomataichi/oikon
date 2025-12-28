@@ -1,4 +1,69 @@
-<div class="a">
   <%= image_tag 'iisya.jpeg', class: "dog-image" %>
- </div>
-<%= link_to "投稿一覧ページへ", tweets_path %>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Timer</title>
+  <style>
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: #f0f0f0;
+    }
+    .timer-display { font-size: 10em; margin-top: 20px; }
+  </style>
+</head>
+<body>
+<div class="counter-container">
+  <%= image_tag 'disny2.jpeg', class: "dog-image" %>
+<div class="image-text">
+  <h1><span id="event"></span></h1>
+  <div class="timer-display" id="timer">00:00:00</div>
+
+  <script>
+    // ===== ここだけ書き換えればOK =====
+    const EVENT_NAME = "COUNT DOWN";
+    // ローカル時間で指定（例: 2026-01-17 18:00）
+    const TARGET_ISO = "2026-01-17T18:00:00";
+    // =================================
+
+    document.getElementById("event").textContent = EVENT_NAME;
+
+    const targetTime = new Date(TARGET_ISO).getTime();
+    const timerEl = document.getElementById("timer");
+
+    function format2(n) {
+      return String(n).padStart(2, "0");
+    }
+
+    function updateTimer() {
+      const now = Date.now();
+      const distance = targetTime - now;
+
+      if (distance <= 0) {
+        clearInterval(timerInterval);
+        timerEl.textContent = "00:00:00";
+        return;
+      }
+
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      timerEl.textContent = `${format2(hours)}:${format2(minutes)}:${format2(seconds)}`;
+    }
+
+    updateTimer();
+    const timerInterval = setInterval(updateTimer, 1000);
+  </script>
+</body>
+</html>
+</div>
+</div>
+<%= link_to "メンバーを見る", tweets_match_path(bangou: @url) %>

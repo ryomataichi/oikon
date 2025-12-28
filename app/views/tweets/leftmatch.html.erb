@@ -21,7 +21,7 @@
     <% if @tweet.image.attached? %>
         <%= image_tag @tweet.image,style: "border-radius: 3%; width: 100%; height: 100%; object-fit:cover;", class: "cat-image" %>
     <% end %>
-    <%= link_to @tweet.name, tweet_path(@tweet.id), class: "tweet-title" if @tweet.name? %>
+    <%= link_to @tweet.name, tweet_leftshow_path(@tweet.id), class: "tweet-title" if @tweet.name? %>
     <%= @tweet.year if @tweet.year? %>
     <button class="btn ninsyou">
       <i class="fa-solid fa-check" style="color: #ffffff;"></i>
