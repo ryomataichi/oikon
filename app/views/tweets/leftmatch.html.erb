@@ -1,27 +1,45 @@
-<div class="tyousei">  
+<header class="tyousei">  
 <div class="hidari">  
 <i class="fa-solid fa-fire fa-flip-horizontal" style="color: #ff0000;"></i>miner
 </div>
 <div class="migi">  
-🛎️
-  <div class="nav">
-  <input id="drawer_input" class="drawer_hidden" type="checkbox">
-  <label for="drawer_input" class="drawer_open"><span></span></label>
-        <nav class="nav_content">
-          <ul class="nav_list">
-            <li class="nav_item"><a href="">      画像入れるとこ</a></li>
-          </ul>
-        </nav>
-   </div>
-  </div>
+<i class="fa-solid fa-bell"></i>
+<i class="fa-solid fa-grip-lines"></i>
 </div>
-</div>
-<div class="page slide-in-left">  
+</header>
+<div class="slide-in-left">  
   <main class="content">
+  <div class="counter-container">
     <% if @tweet.image.attached? %>
-        <%= image_tag @tweet.image,style: "border-radius: 3%; width: 100%; height: 100%; object-fit:cover;", class: "cat-image" %>
+        <%= image_tag @tweet.image, class: "cat-image" %>
     <% end %>
-    <%= link_to @tweet.name, tweet_leftshow_path(@tweet.id), class: "tweet-title" if @tweet.name? %>
+      <div class="match-text">
+        <button class="btn most-left">
+        <%= link_to tweets_match_path(@yomikomi) , class: 'matiapu', method: :post do %>
+          <i class="fa-solid fa-arrow-rotate-right fa-flip-horizontal" style="color: #FFD43B;"></i>
+        <% end %></button>  
+
+        <button class="btn left">
+          <%= link_to tweets_leftmatch_path(bangou: @url) , class: 'matiapu', method: :post do %>
+            <i class="fa-solid fa-xmark" style="color: #e151bb;"></i>
+          <% end %></button>
+
+        <button class="btn center">
+          <%= link_to tweets_match_path(bangou: @url) , class: 'matiapu', method: :post do %>
+            <i class="fa-solid fa-star" style="color: #454545;"></i>
+          <% end %></button>
+
+        <button class="btn right">
+          <%= link_to tweets_match_path(bangou: @url) , class: 'matiapu', method: :post do %>
+            <i class="fa-solid fa-heart" style="color: #00ff6e;"></i>
+          <% end %></button>
+        <button class="btn most-right">
+          <%= link_to tweets_match_path(bangou: @url) , class: 'matiapu', method: :post do %>
+            <i class="fa-solid fa-bolt" style="color: #9475f0;"></i>
+          <% end %></button>
+      </div> 
+  </div> 
+    <%= link_to @tweet.name, tweets_leftshow_path(@tweet.id), class: "tweet-title" if @tweet.name? %>
     <%= @tweet.year if @tweet.year? %>
     <button class="btn ninsyou">
       <i class="fa-solid fa-check" style="color: #ffffff;"></i>
@@ -34,30 +52,8 @@
   <%= @tweet.job if @tweet.job? %>
   <%= @tweet.hobby if @tweet.hobby? %>
 <br>
-  <button class="btn most-left">
-  <%= link_to tweets_match_path(bangou: @url) , class: 'matiapu', method: :post do %>
-    <i class="fa-solid fa-arrow-rotate-right fa-flip-horizontal" style="color: #FFD43B;"></i>
-  <% end %></button>  
-
-  <button class="btn left">
-    <%= link_to tweets_match_path(bangou: @url) , class: 'matiapu', method: :post do %>
-      <i class="fa-solid fa-xmark" style="color: #e151bb;"></i>
-    <% end %></button>
-
-    <button class="btn center">
-    <%= link_to tweets_match_path(bangou: @url) , class: 'matiapu', method: :post do %>
-      <i class="fa-solid fa-star" style="color: #454545;"></i>
-    <% end %></button>
-
-    <button class="btn right">
-    <%= link_to tweets_match_path(bangou: @url) , class: 'matiapu', method: :post do %>
-      <i class="fa-solid fa-heart" style="color: #00ff6e;"></i>
-    <% end %></button>
-    <button class="btn most-right">
-    <%= link_to tweets_match_path(bangou: @url) , class: 'matiapu', method: :post do %>
-      <i class="fa-solid fa-bolt" style="color: #9475f0;"></i>
-    <% end %></button>
-
+ 
+    
   </main>
 </div>
   <footer class="bottom-cta">
@@ -69,8 +65,7 @@
       <button class="btn secondary">
       <i class="fa-solid fa-magnifying-glass"></i>
       </button>
-      <button class="btn secondary"><%= link_to "✨", tweets_path %></button>
-      <button class="btn secondary"><%= link_to "マッチングページへ", tweets_match_path(bangou: @url) %></button>
+      <button class="btn secondary"><%= link_to "✨", tweets_match_path(bangou: @url) %></button>
       <button class="btn secondary">
       <i class="fa-solid fa-comments"></i>
       </button>

@@ -54,12 +54,14 @@ class TweetsController < ApplicationController
         @tweet = Tweet.find(params[:bangou])
         list = Tweet.active.pluck(:id)
         @url = list.shuffle!.first
+        @yomikomi = @tweet.id
     end
     
     def leftmatch
         @tweet = Tweet.find(params[:bangou])
         list = Tweet.active.pluck(:id)
         @url = list.shuffle!.first
+        @yomikomi = @tweet.id
     end
 
     private

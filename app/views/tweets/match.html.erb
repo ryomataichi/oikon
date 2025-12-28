@@ -1,4 +1,4 @@
-<div class="tyousei">  
+<header class="tyousei">  
 <div class="hidari">  
 <i class="fa-solid fa-fire fa-flip-horizontal" style="color: #ff0000;"></i>miner
 </div>
@@ -6,8 +6,8 @@
 <i class="fa-solid fa-bell"></i>
 <i class="fa-solid fa-grip-lines"></i>
 </div>
-</div>
-<div class="page slide-in-right">  
+</header>
+<div class="slide-in-right">  
   <main class="content">
   <div class="counter-container">
     <% if @tweet.image.attached? %>
@@ -15,12 +15,12 @@
     <% end %>
       <div class="match-text">
         <button class="btn most-left">
-        <%= link_to tweets_match_path(bangou: @url) , class: 'matiapu', method: :post do %>
+        <%= link_to tweets_match_path(@yomikomi) , class: 'matiapu', method: :post do %>
           <i class="fa-solid fa-arrow-rotate-right fa-flip-horizontal" style="color: #FFD43B;"></i>
         <% end %></button>  
 
         <button class="btn left">
-          <%= link_to tweets_match_path(bangou: @url) , class: 'matiapu', method: :post do %>
+          <%= link_to tweets_leftmatch_path(bangou: @url) , class: 'matiapu', method: :post do %>
             <i class="fa-solid fa-xmark" style="color: #e151bb;"></i>
           <% end %></button>
 
