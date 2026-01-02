@@ -1,3 +1,4 @@
+<body>
 <header class="tyousei">  
 <div class="hidari">  
 <i class="fa-solid fa-fire fa-flip-horizontal" style="color: #ff0000;"></i>miner
@@ -34,7 +35,7 @@
             <i class="fa-solid fa-heart" style="color: #00ff6e;"></i>
           <% end %></button>
         <button class="btn most-right">
-          <%= link_to tweets_match_path(bangou: @url) , class: 'matiapu', method: :post do %>
+          <%= link_to "#", class: "matiapu" do %>
             <i class="fa-solid fa-bolt" style="color: #9475f0;"></i>
           <% end %></button>
       </div> 
@@ -63,8 +64,9 @@
         <i class="fa-solid fa-fire fa-flip-horizontal" style="color: #ff0000;"></i>
       <% end %></button>
       <button class="btn secondary">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
+            <%= link_to tweets_path, method: :post do %>
+        <i class="fa-solid fa-magnifying-glass"></i>
+      <% end %></button>
       <button class="btn secondary">
         <%= link_to "✨", tweets_match_path(bangou: @url) %>
       </button>
@@ -77,3 +79,6 @@
 
     </div>
   </footer>    
+
+
+</body>
