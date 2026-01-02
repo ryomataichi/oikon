@@ -161,24 +161,34 @@ position: absolute;
     right: 0;
 }
 
-.match-text .btn {
-  width: 56px;
-  height: 56px;        /* ← autoをやめる */
-  border-radius: 50%;
-  padding: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #fff;
+.btn.right {
+    height: auto;
+    border-radius: 50%;
+  background: #ffffff;
+  color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.match-text .btn i {
-  font-size: 26px;
+    right: 0;
 }
 
-.botan_haiti .btn {
+.btn.center {
+    height: auto;
+    border-radius: 50%;
+  background: #ffffff;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    right: 0;
+}
+
+.btn.left {
+    height: auto;
+    border-radius: 50%;
+  background: #ffffff;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    left: 0;
+}
+
+.match-text .btn {
   width: 56px;
   height: 56px;        /* ← autoをやめる */
   border-radius: 50%;

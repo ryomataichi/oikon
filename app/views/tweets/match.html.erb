@@ -19,17 +19,17 @@
           <i class="fa-solid fa-arrow-rotate-right fa-flip-horizontal" style="color: #FFD43B;"></i>
         <% end %></button>  
 
-        <button class="btn left">
+        <button class="btn left2">
           <%= link_to tweets_leftmatch_path(bangou: @url) , class: 'matiapu', method: :post do %>
             <i class="fa-solid fa-xmark" style="color: #e151bb;"></i>
           <% end %></button>
 
-        <button class="btn center">
+        <button class="btn center2">
           <%= link_to tweets_match_path(bangou: @url) , class: 'matiapu', method: :post do %>
             <i class="fa-solid fa-star" style="color: #454545;"></i>
           <% end %></button>
 
-        <button class="btn right">
+        <button class="btn right2">
           <%= link_to tweets_match_path(bangou: @url) , class: 'matiapu', method: :post do %>
             <i class="fa-solid fa-heart" style="color: #00ff6e;"></i>
           <% end %></button>
