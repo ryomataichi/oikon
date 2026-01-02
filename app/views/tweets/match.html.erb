@@ -40,18 +40,20 @@
           <% end %></button>
       </div> 
   </div> 
+  <span class="name"> 
     <%= link_to @tweet.name, tweet_path(@tweet.id), class: "tweet-title" if @tweet.name? %>
     <%= @tweet.year if @tweet.year? %>
     <button class="btn ninsyou">
       <i class="fa-solid fa-check" style="color: #ffffff;"></i>
-    </button>
-<br>
-  <i class="fa-solid fa-quote-left"></i>
+    </button></span>
+
+  <br>
+  <i class="fa-solid fa-location-dot" style="color: #454545;"></i>
+  <%= @tweet.place if @tweet.place? %>
+  <br>
+  <i class="fa-solid fa-quote-left" style="color: #454545;"></i>
   <%= @tweet.profile if @tweet.profile? %>
   <br>
-  <%= @tweet.place if @tweet.place? %>
-  <%= @tweet.job if @tweet.job? %>
-  <%= @tweet.hobby if @tweet.hobby? %>
 <br>
  
     
