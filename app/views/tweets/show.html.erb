@@ -40,17 +40,17 @@
   <i class="fa-solid fa-briefcase" style="color: #454545;"></i>
   <%= @tweet.job if @tweet.job? %>
   <br>
-  <i class="fa-solid fa-location-dot" style="color: #454545;></i>
+  <i class="fa-solid fa-location-dot" style="color: #454545;"></i>
   <%= @tweet.place if @tweet.place? %>
-<br>
-<br>
+  <br>
+  <br>
   <h2>自己紹介</h2>
   <%= @tweet.profile if @tweet.profile? %>
-<br>
-<i class="fa-regular fa-thumbs-up" style="color: #454545;"></i>
+  <br>
+  <i class="fa-regular fa-thumbs-up" style="color: #454545;"></i>
   <%= @tweet.hobby if @tweet.hobby? %>
-<br>
- <%= link_to "編集", edit_tweet_path(@tweet) %>
+  <br>
+  <%= link_to "編集", edit_tweet_path(@tweet) %>
     
   </main>
   <footer class="bottom-cta">

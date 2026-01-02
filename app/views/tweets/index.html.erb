@@ -8,17 +8,17 @@
         ない
     <% end %>
 <br>
-    <%= link_to t.name, tweet_path(t.id), class: "tweet-title" if t.name? %>
+名前：<%= link_to t.name, tweet_path(t.id), class: "tweet-title" if t.name? %>
 <br>
-<%= t.year %>
+年：<%= t.year %>
 <br>
-<%= t.profile %>
+自己紹介：<%= t.profile %>
 <br>
-<%= t.place %>
+住所：<%= t.place %>
 <br>
-<%= t.job %>
+職業：<%= t.job %>
 <br>
-<%= t.hobby %>
+趣味：<%= t.hobby %>
 <br>
     </p>
 <% end %>

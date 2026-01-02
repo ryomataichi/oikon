@@ -18,10 +18,16 @@
   position: relative;
 }
 .botan_haiti{
-left: 50%;
-transform: translateX(-50%);
-position: absolute;
-gap: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  display: flex;              /* ← 横並び */
+  justify-content: center;    /* ← 中央寄せ */
+  align-items: center;
+  gap: 12px;                  /* ← ボタン間の余白 */
+  white-space: nowrap;        /* ← 折り返し禁止 */
+  flex-wrap: nowrap;          /* ← 念のため */
+  width: max-content;         /* ← 中身の幅に合わせる */
 }
 
 .name{
