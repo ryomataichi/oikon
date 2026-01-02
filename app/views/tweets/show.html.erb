@@ -37,15 +37,19 @@
       <i class="fa-solid fa-check" style="color: #ffffff;"></i>
     </button>
   <br>
-  <i class="fa-solid fa-location-dot"></i>
-  <%= @tweet.place if @tweet.place? %>
+  <i class="fa-solid fa-briefcase" style="color: #454545;"></i>
   <%= @tweet.job if @tweet.job? %>
-  <%= @tweet.hobby if @tweet.hobby? %>
+  <br>
+  <i class="fa-solid fa-location-dot" style="color: #454545;></i>
+  <%= @tweet.place if @tweet.place? %>
 <br>
 <br>
   <h2>自己紹介</h2>
   <%= @tweet.profile if @tweet.profile? %>
-
+<br>
+<i class="fa-regular fa-thumbs-up" style="color: #454545;"></i>
+  <%= @tweet.hobby if @tweet.hobby? %>
+<br>
  <%= link_to "編集", edit_tweet_path(@tweet) %>
     
   </main>
@@ -56,9 +60,12 @@
         <i class="fa-solid fa-fire fa-flip-horizontal" style="color: #ff0000;"></i>
       <% end %></button>
       <button class="btn secondary">
-      <i class="fa-solid fa-magnifying-glass"></i>
+            <%= link_to tweets_path, method: :post do %>
+        <i class="fa-solid fa-magnifying-glass"></i>
+      <% end %></button>
+      <button class="btn secondary">
+        <%= link_to "✨", tweets_match_path(bangou: @url) %>
       </button>
-      <button class="btn secondary"><%= link_to "✨", tweets_match_path(bangou: @url) %></button>
       <button class="btn secondary">
       <i class="fa-solid fa-comments"></i>
       </button>
