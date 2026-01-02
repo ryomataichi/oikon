@@ -152,6 +152,10 @@ position: absolute;
   color: #333;
 }
 
+a{
+  text-decoration: none;
+}
+
 .btn.ninsyou {
     height: 25px;
     border-radius: 50%;

@@ -24,6 +24,7 @@
 令和8年1月吉日
   </div>
   </div>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -49,7 +50,7 @@
   <%= image_tag 'disny2.jpeg', class: "dog-image" %>
 <div class="image-text">
   <h1><span id="event"></span></h1>
-  <div class="timer-display" id="timer">00:00:00</div>
+<div class="timer-display" id="timer">00:00:00:00</div>
 
   <script>
     // ===== ここだけ書き換えればOK =====
@@ -73,15 +74,25 @@
 
       if (distance <= 0) {
         clearInterval(timerInterval);
-        timerEl.textContent = "00:00:00";
+        timerEl.textContent = "00:00:00:00";
         return;
       }
 
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    let diff = distance;
 
-      timerEl.textContent = `${format2(hours)}:${format2(minutes)}:${format2(seconds)}`;
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    diff %= (1000 * 60 * 60 * 24);
+
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    diff %= (1000 * 60 * 60);
+
+    const minutes = Math.floor(diff / (1000 * 60));
+    diff %= (1000 * 60);
+
+    const seconds = Math.floor(diff / 1000);
+
+    timerEl.textContent = `${format2(days)}:${format2(hours)}:${format2(minutes)}:${format2(seconds)}`;
+
     }
 
     updateTimer();
