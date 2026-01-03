@@ -253,3 +253,27 @@ a{
   padding-bottom: 110px;
   padding-top: 4vh;
 }
+
+.pill{
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid #d1d1d6;   /* 薄いグレーの線 */
+  border-radius: 9999px;      /* 楕円にするポイント */
+  color: #3c3c43;             /* iOSっぽいグレー文字 */
+  font-size: 14px;
+  background-color: #ffffff; /* 背景は白 */
+}
+
+.member{
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid gold;   /* 薄いグレーの線 */
+  border-radius: 9999px;      /* 楕円にするポイント */
+  color: #000000;             /* iOSっぽいグレー文字 */
+  font-size: 20px;
+  background-color: #ffffff; /* 背景は白 */
+  text-decoration: none;
+}
+.member:visited {
+  color: rgb(0, 0, 0);
+}

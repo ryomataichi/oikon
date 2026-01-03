@@ -47,8 +47,8 @@
   <h2>自己紹介</h2>
   <%= @tweet.profile if @tweet.profile? %>
   <br>
-  <i class="fa-regular fa-thumbs-up" style="color: #454545;"></i>
-  <%= @tweet.hobby if @tweet.hobby? %>
+  <span class="pill"><%= @tweet.hobby if @tweet.hobby? %></span>
+
   <br>
   <%= link_to "編集", edit_tweet_path(@tweet) %>
     
