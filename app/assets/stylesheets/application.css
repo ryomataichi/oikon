@@ -56,9 +56,11 @@
   font-size: 11px;
 }
 
-.image-text2 {
+.image-text3 {
   position: absolute;
-
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: rgb(0, 0, 0);
   font-size: 11px;
 }
