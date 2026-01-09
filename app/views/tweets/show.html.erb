@@ -24,7 +24,7 @@
           <% end %></button>
 
         <button class="btn right">
-          <%= link_to tweets_match_path(bangou: @url) , class: 'matiapu', method: :post do %>
+          <%= link_to edit_tweet_path(@tweet) , class: 'matiapu', method: :post do %>
             <i class="fa-solid fa-star" style="color: #454545;"></i>
           <% end %></button>
       </div>
@@ -49,9 +49,7 @@
   <br>
   <span class="pill"><%= @tweet.hobby if @tweet.hobby? %></span>
 
-  <br>
-  <%= link_to "編集", edit_tweet_path(@tweet) %>
-    
+  <br>    
   </main>
   <footer class="bottom-cta">
     <div class="cta-inner">

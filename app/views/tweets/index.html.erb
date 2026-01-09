@@ -1,25 +1,43 @@
-<h1>オイコンくる26卒で抜けてる人いたら作って埋めといて欲しい！</h1>
-
+<header class="tyousei">  
+<div class="hidari">  
+<i class="fa-solid fa-fire fa-flip-horizontal" style="color: #ff0000;"></i>miner
+</div>
+<div class="migi">  
+<i class="fa-solid fa-bell"></i>
+<i class="fa-solid fa-grip-lines"></i>
+</div>
+</header>
+<br>
+<h1>参列者の皆様</h1>
 <% @tweets.each do |t| %>
-    <p>
+
+  <main class="content">
+  <div class="counter-container">
     <% if t.image.attached? %>
-        <%= image_tag t.image,style: "border-radius: 0%; width: 360px; height: 240px; object-fit:cover;" %>
-    <% else %>
-        ない
+        <%= image_tag t.image, class: "cat-image" %>
     <% end %>
-<br>
-名前：<%= link_to t.name, tweet_path(t.id), class: "tweet-title" if t.name? %>
-<br>
-年：<%= t.year %>
-<br>
-自己紹介：<%= t.profile %>
-<br>
-住所：<%= t.place %>
-<br>
-職業：<%= t.job %>
-<br>
-趣味：<%= t.hobby %>
-<br>
-    </p>
+    <span class="name">  
+    <%= link_to t.name, tweet_path(t.id), class: "tweet-title" if t.name? %>
+    </span>
+    <%= t.year if t.year? %>
+    <button class="btn ninsyou">
+      <i class="fa-solid fa-check" style="color: #ffffff;"></i>
+    </button>
+  <br>
+  <i class="fa-solid fa-briefcase" style="color: #454545;"></i>
+  <%= t.job if t.job? %>
+  <br>
+  <i class="fa-solid fa-location-dot" style="color: #454545;"></i>
+  <%= t.place if t.place? %>
+  <br>
+  <br>
+  <h2>自己紹介</h2>
+  <%= t.profile if t.profile? %>
+  <br>
+  <span class="pill"><%= t.hobby if t.hobby? %></span>
+  <br>    
+    <%= link_to "編集", edit_tweet_path(t.id), class: "edit-link" %>
+  </main>
+</div>
 <% end %>
   <%=link_to "新規投稿",new_tweet_path, class: 'geek' %>
