@@ -1,3 +1,4 @@
+<body>
 <header class="tyousei">  
 <div class="hidari">  
 <i class="fa-solid fa-fire fa-flip-horizontal" style="color: #ff0000;"></i>miner
@@ -7,40 +8,55 @@
 <i class="fa-solid fa-grip-lines"></i>
 </div>
 </header>
-<div class="page slide-in-left">  
+<div class="slide-in-left">  
   <main class="content">
+  <div class="counter-container">
     <% if @tweet.image.attached? %>
         <%= image_tag @tweet.image, class: "cat-image" %>
     <% end %>
-    <%=  @tweet.name if @tweet.name? %>
+      <div class="match-text">
+        <button class="btn most-left">
+        <%= link_to tweets_match_path(@yomikomi) , class: 'matiapu', method: :post do %>
+          <i class="fa-solid fa-arrow-rotate-right fa-flip-horizontal" style="color: #FFD43B;"></i>
+        <% end %></button>  
+
+        <button class="btn left2">
+          <%= link_to tweets_leftmatch_path(bangou: @url) , class: 'matiapu', method: :post do %>
+            <i class="fa-solid fa-xmark" style="color: #e151bb;"></i>
+          <% end %></button>
+
+        <button class="btn center2">
+          <%= link_to "#", class: "matiapu" do %>
+            <i class="fa-solid fa-star" style="color: #454545;"></i>
+          <% end %></button>
+
+        <button class="btn right2">
+          <%= link_to tweets_match_path(bangou: @url) , class: 'matiapu', method: :post do %>
+            <i class="fa-solid fa-heart" style="color: #00ff6e;"></i>
+          <% end %></button>
+        <button class="btn most-right">
+          <%= link_to "#", class: "matiapu" do %>
+            <i class="fa-solid fa-bolt" style="color: #9475f0;"></i>
+          <% end %></button>
+      </div> 
+  </div> 
+  <span class="name"> 
+    <%= link_to @tweet.name, tweet_path(@tweet.id), class: "tweet-title" if @tweet.name? %>
     <%= @tweet.year if @tweet.year? %>
     <button class="btn ninsyou">
       <i class="fa-solid fa-check" style="color: #ffffff;"></i>
-    </button>
-<br>
-  <i class="fa-solid fa-quote-left"></i>
+    </button></span>
+
+  <br>
+  <i class="fa-solid fa-location-dot" style="color: #454545;"></i>
+  <%= @tweet.place if @tweet.place? %>
+  <br>
+  <i class="fa-solid fa-quote-left" style="color: #454545;"></i>
   <%= @tweet.profile if @tweet.profile? %>
   <br>
-  <%= @tweet.place if @tweet.place? %>
-  <%= @tweet.job if @tweet.job? %>
-  <%= @tweet.hobby if @tweet.hobby? %>
 <br>
+ 
     
-  <button class="btn left">
-    <%= link_to tweets_leftmatch_path(bangou: @url) , class: 'matiapu', method: :post do %>
-      <i class="fa-solid fa-xmark" style="color: #e151bb;"></i>
-    <% end %></button>
-
-    <button class="btn center">
-    <%= link_to tweets_match_path(bangou: @url) , class: 'matiapu', method: :post do %>
-      <i class="fa-solid fa-heart" style="color: #00ff6e;"></i>
-    <% end %></button>
-
-    <button class="btn right">
-    <%= link_to tweets_path, class: 'matiapu', method: :post do %>
-      <i class="fa-solid fa-star" style="color: #454545;"></i>
-    <% end %></button>
-
   </main>
 </div>
   <footer class="bottom-cta">
@@ -50,9 +66,12 @@
         <i class="fa-solid fa-fire fa-flip-horizontal" style="color: #ff0000;"></i>
       <% end %></button>
       <button class="btn secondary">
-      <i class="fa-solid fa-magnifying-glass"></i>
+            <%= link_to tweets_path, method: :post do %>
+        <i class="fa-solid fa-magnifying-glass"></i>
+      <% end %></button>
+      <button class="btn secondary">
+        <%= link_to "✨", tweets_match_path(bangou: @url) %>
       </button>
-      <button class="btn secondary"><%= link_to "✨", tweets_match_path(bangou: @url) %></button>
       <button class="btn secondary">
       <i class="fa-solid fa-comments"></i>
       </button>
@@ -62,3 +81,6 @@
 
     </div>
   </footer>    
+
+
+</body>
