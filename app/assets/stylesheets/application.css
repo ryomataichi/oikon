@@ -56,6 +56,13 @@
   font-size: 11px;
 }
 
+.image-text2 {
+  position: absolute;
+
+  color: rgb(0, 0, 0);
+  font-size: 11px;
+}
+
 .match-text {
   position: absolute;
   top: 93%;

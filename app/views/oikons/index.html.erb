@@ -102,7 +102,9 @@
 </html>
 </div>
 </div>
-<div>
+<div class="counter-container">
+<%= image_tag 'info.jpeg', class: "dog-image" %>
+<div class="image-text3">
 日　時　　　令和8年1月17日（土）
 <br>
 受　付　　　20時00分
@@ -117,6 +119,8 @@
 <br>
 電話番号　　080-4931-0914
 <br>
-</div><br>
+</div>
+</div>
+<br>
 <br>
 <span class="member"><%= link_to "出席者の皆様", tweets_match_path(bangou: @url) %></span>
