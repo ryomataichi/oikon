@@ -95,7 +95,7 @@
 }
 .cat-image {
   width: 100%;   /* 幅を固定 */
-  height: 500px;      /* 高さ固定をやめる */
+  height: 510px;      /* 高さ固定をやめる */
   display: block;    /* imgの下の謎の隙間も消える */
   object-fit: cover;
 }
