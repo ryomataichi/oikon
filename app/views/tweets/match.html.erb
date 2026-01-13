@@ -66,8 +66,9 @@
         <i class="fa-solid fa-fire fa-flip-horizontal" style="color: #ff0000;"></i>
       <% end %></button>
       <button class="btn secondary">
+      <%= link_to tweets_path, method: :post do %>
         <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
+      <% end %></button>
       <button class="btn secondary">
         <%= link_to "✨", tweets_match_path(bangou: @url) %>
       </button>
